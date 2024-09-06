@@ -1,0 +1,151 @@
+body {
+  background-color: #121213;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+body,
+button,
+input {
+  font-family: 'Open sans', sans-serif;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.btn {
+  background-color: #fff;
+  color: #121213;
+  border: none;
+  padding: .75rem 1rem;
+  border-radius: .4rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: .75;
+  transition: opacity .3s;
+}
+
+.btn-close-modal {
+  background: #121213;
+  color: #fff;
+}
+
+.modal {
+  display: grid;
+  align-content: start;
+  padding: 0;
+  border: none;
+  border-radius: .5rem;
+}
+
+.modal-closing {
+  animation: fadeOut .5s ease 0s 1 normal forwards;
+}
+
+.modal:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.modal[open] {
+  animation: scaleIn .5s ease 0s 1 normal forwards;
+}
+
+.modal::backdrop {
+  backdrop-filter: blur(25px);
+  transition: backdrop-filter .5s ease;
+}
+
+.modal form {
+  max-width: 36rem;
+  width: 100%;
+  border-radius: .5rem;
+}
+
+.modal header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 2rem;
+}
+
+.modal header button {
+  border: none;
+  background-color: transparent;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.modal header button:hover {
+  opacity: .75;
+  transition: opacity .3s;
+}
+
+.modal header button svg {
+  width: 1.7rem;
+  flex-shrink: 0
+}
+
+.modal form header h3 {
+  font-size: 1.5rem;
+}
+
+.modal form article {
+  padding: 0 1rem;
+}
+
+.modal form article p {
+  margin: 0;
+}
+
+.modal form footer {
+  padding: 1rem;
+  display: flex;
+}
+
+.modal form footer button {
+  margin-left: auto;
+}
+
+@keyframes scaleIn {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Modal with pure JS</title>
+  </head>
+  <body>
+
+    <dialog id="modal" class="modal">
+      <form method="dialog" id="modal-form">
+        <header>
+          <h3>Apenas um modal</h3>
+          <button>
+            <title>close dialog icon</title>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </header>
+        <article>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sapiente numquam nisi rerum id quidem eligendi unde soluta illo sed quibusdam eveniet porro exercitationem nam quae, provident, repudiandae perferendis inventore.</p>
+        </article>
+        <footer>
+          <button class="btn btn-close-modal" type="submit" value="confirm">Confirmar</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <button 
+      class="btn" 
+      id="open-btn"
+    >
+      Abrir modal
+    </button>
+    <script type="module" src="/src/script.ts"></script>
+  </body>
+</html>
